@@ -82,4 +82,4 @@ The result of 5 + 3 will be stored in memory address 12.
 
 ## License
 
-[MIT License](https://raw.githubusercontent.com/mrwindius/AL8-Emulator/refs/heads/main/LICENSE) (assuming license file exists - modify as needed)
+[MIT License](https://raw.githubusercontent.com/mrwindius/AL8-Emulator/refs/heads/main/LICENSE)

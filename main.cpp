@@ -8,19 +8,19 @@
 
 class AL1 {
 private:
-    uint8_t A;    // Аккумулятор
-    uint8_t PC;   // Счетчик команд
-    uint8_t IR;   // Регистр инструкций
-    bool running; // Флаг работы
+    uint8_t A;    
+    uint8_t PC;   
+    uint8_t IR;   
+    bool running; 
     std::vector<uint8_t> memory;
 
     enum Opcode {
-        HLT = 0x00, // Остановить
-        LDA = 0x01, // Загрузить в A
-        STA = 0x02, // Сохранить из A
-        ADD = 0x03, // Сложить
-        SUB = 0x04, // Вычесть
-        JMP = 0x05  // Перейти
+        HLT = 0x00, 
+        LDA = 0x01, 
+        STA = 0x02, 
+        ADD = 0x03, 
+        SUB = 0x04, 
+        JMP = 0x05  
     };
 
 public:
@@ -78,7 +78,6 @@ public:
     }
 };
 
-// Компиляция .asm в .bin
 void compile(const std::string& asmFile, const std::string& binFile) {
     std::map<std::string, uint8_t> opcodes = {
         {"HLT", 0x00}, {"LDA", 0x01}, {"STA", 0x02},
@@ -131,7 +130,6 @@ void compile(const std::string& asmFile, const std::string& binFile) {
     std::cout << "Compiled " << asmFile << " to " << binFile << "\n";
 }
 
-// Запуск .bin файла
 void execute(const std::string& binFile) {
     std::ifstream inFile(binFile, std::ios::binary);
     if (!inFile) {
@@ -144,7 +142,6 @@ void execute(const std::string& binFile) {
 
     AL1 cpu;
     cpu.loadProgram(program);
-    // Установка начальных данных через публичный метод
     cpu.setMemory(10, 5);
     cpu.setMemory(11, 3);
     cpu.run();
